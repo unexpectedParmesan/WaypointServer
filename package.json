@@ -1,0 +1,22 @@
+{
+  "name": "Waypoint",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "bookshelf": "^0.8.1",
+    "express": "^4.13.1",
+    "gulp": "^3.9.0",
+    "knex": "^0.8.6",
+    "mime-db": "^1.15.0",
+    "mysql": "^2.8.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-db": "0.0.1",
+    "gulp-shell": "^0.4.2"
+  }
+}
