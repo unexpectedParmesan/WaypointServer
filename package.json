@@ -2,9 +2,6 @@
   "name": "Waypoint",
   "version": "0.0.1",
   "private": true,
-  "scripts": {
-    "start": "node server.js"
-  },
   "dependencies": {
     "body-parser": "^1.13.2",
     "bookshelf": "^0.8.1",
