@@ -1,7 +1,7 @@
 var express = require("express");
 // var router = require("./router.js");
 var bodyParser = require("body-parser");
-var pathController = require('./Controllers/pathController.js');
+var pathController = require('./controllers/pathController.js');
 
 
 var db = require("./db/config.js");
