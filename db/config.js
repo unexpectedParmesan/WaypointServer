@@ -4,7 +4,7 @@ var knex = require('knex')({
 		host: process.env.DATABASE_URL || '127.0.0.1',
 		user: 'root',
 		password: '',
-		database: 'waypointdb',
+		database: 'heroku_e73d8a068f6abe5',
 		charset: 'utf8',
 	}
 });
