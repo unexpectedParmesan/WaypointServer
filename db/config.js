@@ -9,6 +9,12 @@ var knex = require('knex')({
 	}
 });
 
+		// host: '127.0.0.1',
+		// user: 'root',
+		// password: '',
+		// database: 'waypointdb',
+		// charset: 'utf8'
+
 var db = require('bookshelf')(knex);
 
 db.knex.schema.hasTable('paths').then(function(exists) {

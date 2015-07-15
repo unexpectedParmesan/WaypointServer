@@ -10,7 +10,7 @@ var path1 = new Path({
 });
 
 var waypoint1 = new Waypoint({
-	path_id: 1,
+	path_id: 2,
 	index_in_path: 0,
 	latitude: 37.785214,
 	longitude: -122.402802,
@@ -19,7 +19,7 @@ var waypoint1 = new Waypoint({
 });
 
 var waypoint2 = new Waypoint({
-	path_id: 1,
+	path_id: 2,
 	index_in_path: 1,
 	latitude: 37.776090,
 	longitude: -122.434645,
@@ -28,7 +28,7 @@ var waypoint2 = new Waypoint({
 });
 
 var waypoint3 = new Waypoint({
-	path_id: 1,
+	path_id: 2,
 	index_in_path: 2,
 	latitude: 37.772772,
 	longitude: -122.458690,
@@ -44,7 +44,7 @@ var path2 = new Path({
 });
 
 var waypoint4 = new Waypoint({
-	path_id: 2,
+	path_id: 12,
 	index_in_path: 0,
 	latitude: 37.783932,
 	longitude: -122.409084,
@@ -53,7 +53,7 @@ var waypoint4 = new Waypoint({
 });
 
 var waypoint5 = new Waypoint({
-	path_id: 2,
+	path_id: 12,
 	index_in_path: 1,
 	latitude: 37.781169,
 	longitude: -122.406297,
@@ -62,7 +62,7 @@ var waypoint5 = new Waypoint({
 });
 
 var waypoint6 = new Waypoint({
-	path_id: 2,
+	path_id: 12,
 	index_in_path: 2,
 	latitude: 37.782879,
 	longitude: -122.410106,
