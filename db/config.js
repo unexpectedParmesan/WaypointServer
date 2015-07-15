@@ -1,19 +1,19 @@
 var knex = require('knex')({
 	client: 'mysql',
 	connection: {
-		host: 'us-cdbr-iron-east-02.cleardb.net',
-		user: 'b7d6027da9b5a3',
-		password: 'da813c61',
-		database: 'heroku_e73d8a068f6abe5',
+		host: '127.0.0.1',
+		user: 'root',
+		password: '',
+		database: 'waypointdb',
 		charset: 'utf8'
 	}
 });
-    //Connection data for connecting to local instance of database, only used for testing
-		// host: '127.0.0.1',
-		// user: 'root',
-		// password: '',
-		// database: 'waypointdb',
+		// host: 'us-cdbr-iron-east-02.cleardb.net',
+		// user: 'b7d6027da9b5a3',
+		// password: 'da813c61',
+		// database: 'heroku_e73d8a068f6abe5',
 		// charset: 'utf8'
+    //Connection data for connecting to local instance of database, only used for testing
 
 var db = require('bookshelf')(knex);
 
@@ -40,8 +40,8 @@ db.knex.schema.hasTable('waypoints').then(function(exists) {
 			waypoint.increments('id').primary();
 			waypoint.integer('path_id');
 			waypoint.integer('index_in_path');
-			waypoint.float('latitude', 30);
-			waypoint.float('longitude', 30);
+			waypoint.float('latitude', 15, 10);
+			waypoint.float('longitude', 15, 10);
 			waypoint.string('title', 100);
 			waypoint.string('description', 5000);
 			// Creates created_at and updated_at columns
