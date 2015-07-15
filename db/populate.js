@@ -8,7 +8,7 @@ var Waypoint = require('./models/waypoint.js');
 var path1 = new Path({
 	title: 'Zombie Escape 2: mySQL',
 	length: '2.3 mi',
-	description: 'A thrilling brush with the undead through some the city\'s lovliest parks. Includes puzzles and physichal clues. Requires tree climbing. Recomended start time is 6pm.',
+	description: 'A thrilling brush with the undead through some the city\'s lovliest parks. Includes puzzles and physical clues. Requires tree climbing. Recomended start time is 6pm.',
 	estimated_time: '2-3 hrs',
 });
 
