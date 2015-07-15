@@ -7,6 +7,10 @@
     "bookshelf": "^0.8.1",
     "express": "^4.13.1",
     "gulp": "^3.9.0",
+    "gulp-connect": "^2.2.0",
+    "gulp-db": "0.0.1",
+    "gulp-shell": "^0.4.2",
+    "gutil": "^1.6.4",
     "knex": "^0.8.6",
     "mime-db": "^1.15.0",
     "mysql": "^2.8.0"
