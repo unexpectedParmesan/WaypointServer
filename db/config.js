@@ -40,8 +40,8 @@ db.knex.schema.hasTable('waypoints').then(function(exists) {
 			waypoint.increments('id').primary();
 			waypoint.integer('path_id');
 			waypoint.integer('index_in_path');
-			waypoint.float('latitude', 30);
-			waypoint.float('longitude', 30);
+			waypoint.float('latitude', 15,10);
+			waypoint.float('longitude', 15,10);
 			waypoint.string('title', 100);
 			waypoint.string('description', 5000);
 			// Creates created_at and updated_at columns
