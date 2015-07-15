@@ -10,7 +10,6 @@ var dbManager = dbTask({
 	dialect: 'mysql'
 });
 
-
 gulp.task('drop', dbManager.drop('waypointdb'));
 gulp.task('create', dbManager.create('waypointdb'));
 
