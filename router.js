@@ -1,14 +1,14 @@
-var router = require('Express').Router();
-var pathController = require('./Controllers/pathController.js');
-// var app = require('./server.js')
+//Not currently in use. Will use once routing becomes more complex with route creation, users, etc.
 
-module.exports = function(app){
+// var router = require('Express').Router();
+// var pathController = require('./Controllers/pathController.js');
+// // var app = require('./server.js')
 
-	// NOT IN USE YET. SEE server.js
+// module.exports = function(app){
 
-	// router.route('/')
-	  // .get(pathController.getPath)
-	  // .post(pathController.makePath);
-		// .get(pathController.getAllPaths;
+// 	router.route('/')
+// 	  .get(pathController.getPath)
+// 	  .post(pathController.makePath);
+// 		.get(pathController.getAllPaths;
 
-};
+// };

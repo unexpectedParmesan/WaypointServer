@@ -8,7 +8,7 @@ var knex = require('knex')({
 		charset: 'utf8'
 	}
 });
-
+    //Connection data for connecting to local instance of database, only used for testing
 		// host: '127.0.0.1',
 		// user: 'root',
 		// password: '',

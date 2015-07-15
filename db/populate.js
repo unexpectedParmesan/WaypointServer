@@ -1,3 +1,6 @@
+//Populates the database with dummy data: 2 paths with 3 waypoints each
+//Path_ids are 2 and 12 because clearDB is wacky, they start at 2 and increment by 10
+
 var db = require('./config.js');
 var Path = require('./models/path.js');
 var Waypoint = require('./models/waypoint.js');

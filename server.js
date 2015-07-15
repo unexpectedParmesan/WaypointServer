@@ -14,6 +14,7 @@ var server = app.listen(app.get('port'), function() {
   console.log('Server listening on port ' + app.get('port'));
 });
 
+//Right now this will handle all requests
 app.get('/paths', function(req, res) {
   pathController.getAllPaths(req, res);
 });
