@@ -41,7 +41,7 @@ var path2 = new Path({
 	length: '0.7 mi',
 	description: 'we deserve a beer or seven',
 	estimated_time: '1-13 hrs',
-})
+});
 
 var waypoint4 = new Waypoint({
 	path_id: 2,
