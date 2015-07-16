@@ -3,9 +3,9 @@ if (process.env.NODE_ENV === 'production') {
 		client: 'mysql',
 		connection: {
 			host: 'us-cdbr-iron-east-02.cleardb.net',
-			user: 'bb8b6f378dccf7',
-			password: '61299473',
-			database: 'heroku_9d42402fe183744',
+			user: 'b220d94c2be53d',
+			password: 'bd11f9e8',
+			database: 'heroku_49f978646a3ea6c',
 			charset: 'utf8'
 		}
 	});
