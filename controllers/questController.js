@@ -5,20 +5,6 @@ var Quests = require('../db/collections/quests.js');
 
 module.exports = {
 
-
-  // USE LATER IF NECESSARY
-
-  // getQuest: function(req, res){
-  // 	var questTitle = req.body.title;
-  //
-  // 	Quest.forge().where({title: questTitle}).fetchOne()
-  // 	  .then(function(model){
-  // 	  	//Log quest to console for testing - remove for production
-  // 	  	console.log(model);
-  // 	  	res.status(200).send(model);
-  // 	  });
-  // },
-
   getAllQuests: function(req, res) {
     new Quest().fetchAll({
       withRelated: 'waypoints'
@@ -28,7 +14,6 @@ module.exports = {
   },
 
   makeQuest: function(req, res) {
-    console.log(req.body);
     new Quest({
       title: req.body.title
     }).fetch().then(function(found) {
@@ -42,10 +27,47 @@ module.exports = {
           estimated_time: req.body.estimated_time,
       	});
       	newQuest.save().then(function(quest){
-      		//Log saved quest to console for testing - remove for production
-      		console.log("Quest saved to database", quest)
       		res.status(200).send(quest);
       	});
+      }
+    });
+  },
+
+  updateQuest: function(req, res) {
+    new Quest({
+      id: req.params.questId
+    }).fetch().then(function(quest) {
+      if (!quest) {
+        res.status(404).send('Quest not found');
+      } else {
+        for (var key in req.body) {
+          quest.set(key, req.body[key]);
+        }
+        quest.save().then(function(quest) {
+          if (!quest) {
+            res.status(500).send('Internal server error');
+          } else {
+            res.status(201).send(quest);
+          }
+        });
+      }
+    });
+  },
+
+  deleteQuest: function(req, res) {
+    new Quest({
+      id: req.params.questId
+    }).fetch().then(function(quest) {
+      if (!quest) {
+        res.status(404).send('Quest not found');
+      } else {
+        quest.destroy().then(function(success) {
+          if (!success) {
+            res.status(500).send('Internal server error');
+          } else {
+            res.status(204).send();
+          }
+        });
       }
     });
   }
