@@ -1,11 +1,11 @@
-//Populates the database with dummy data: 2 paths with 3 waypoints each
-//Path_ids are 2 and 12 because clearDB is wacky, they start at 2 and increment by 10
+//Populates the database with dummy data: 2 quests with 3 waypoints each
+//Quest_ids are 2 and 12 because clearDB is wacky, they start at 2 and increment by 10
 
 var db = require('./config.js');
-var Path = require('./models/path.js');
+var Quest = require('./models/quest.js');
 var Waypoint = require('./models/waypoint.js');
 
-var path1 = new Path({
+var quest1 = new Quest({
 	title: 'Zombie Escape 2: mySQL',
 	length: '2.3 mi',
 	description: 'A thrilling brush with the undead through some the city\'s lovliest parks. Includes puzzles and physical clues. Requires tree climbing. Recomended start time is 6pm.',
@@ -13,8 +13,8 @@ var path1 = new Path({
 });
 
 var waypoint1 = new Waypoint({
-	path_id: 2,
-	index_in_path: 0,
+	quest_id: 2,
+	index_in_quest: 0,
 	latitude: 37.785214,
 	longitude: -122.402802,
 	title: 'zomg waypoint',
@@ -22,8 +22,8 @@ var waypoint1 = new Waypoint({
 });
 
 var waypoint2 = new Waypoint({
-	path_id: 2,
-	index_in_path: 1,
+	quest_id: 2,
+	index_in_quest: 1,
 	latitude: 37.776090,
 	longitude: -122.434645,
 	title: 'also waypoint',
@@ -31,15 +31,15 @@ var waypoint2 = new Waypoint({
 });
 
 var waypoint3 = new Waypoint({
-	path_id: 2,
-	index_in_path: 2,
+	quest_id: 2,
+	index_in_quest: 2,
 	latitude: 37.772772,
 	longitude: -122.458690,
 	title: 'also also waypoint',
 	description: 'porkchop sandwhiches!',
 });
 
-var path2 = new Path({
+var quest2 = new Quest({
 	title: 'Hack Reactor Bars',
 	length: '0.7 mi',
 	description: 'we deserve a beer or seven',
@@ -47,8 +47,8 @@ var path2 = new Path({
 });
 
 var waypoint4 = new Waypoint({
-	path_id: 12,
-	index_in_path: 0,
+	quest_id: 12,
+	index_in_quest: 0,
 	latitude: 37.783932,
 	longitude: -122.409084,
 	title: 'mikeller',
@@ -56,8 +56,8 @@ var waypoint4 = new Waypoint({
 });
 
 var waypoint5 = new Waypoint({
-	path_id: 12,
-	index_in_path: 1,
+	quest_id: 12,
+	index_in_quest: 1,
 	latitude: 37.781169,
 	longitude: -122.406297,
 	title: 'tempest',
@@ -65,8 +65,8 @@ var waypoint5 = new Waypoint({
 });
 
 var waypoint6 = new Waypoint({
-	path_id: 12,
-	index_in_path: 2,
+	quest_id: 12,
+	index_in_quest: 2,
 	latitude: 37.782879,
 	longitude: -122.410106,
 	title: 'crazy horse',
@@ -74,8 +74,8 @@ var waypoint6 = new Waypoint({
 });
 
 
-path1.save().then(function(path) {
-	console.log('saved path:', path);
+quest1.save().then(function(quest) {
+	console.log('saved quest:', quest);
 });
 
 waypoint1.save().then(function(waypoint) {
@@ -90,8 +90,8 @@ waypoint3.save().then(function(waypoint) {
 	console.log('saved waypoint:', waypoint)
 });
 
-path2.save().then(function(path) {
-	console.log('saved path:', path);
+quest2.save().then(function(quest) {
+	console.log('saved quest:', quest);
 });
 
 waypoint4.save().then(function(waypoint) {
