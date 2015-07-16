@@ -2,6 +2,7 @@ var express = require("express");
 // var router = require("./router.js");
 var bodyParser = require("body-parser");
 var questController = require('./controllers/questController.js');
+var waypointController = require('./controllers/waypointController.js');
 
 
 var db = require("./db/config.js");

@@ -27,10 +27,11 @@ module.exports = {
     });
   },
 
-  makeQuest: function(req, res){
+  makeQuest: function(req, res) {
+    console.log(req.body);
     new Quest({
       title: req.body.title
-    }).fetchOne().then(function(found) {
+    }).fetch().then(function(found) {
       if (found) {
         res.status(422).send('Sorry, there\'s already a quest with that title!');
       } else {
