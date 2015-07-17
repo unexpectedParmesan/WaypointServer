@@ -4,10 +4,7 @@ var UserActiveQuests = require('./userActiveQuests.js');
 
 var User = db.Model.extend({
 	tableName: 'users',
-	createdQuest: function(){
-		return this.hasMany(UserCreatedQuest);
-	},
-	activeQuest: function(){
+	activeQuests: function(){
 		return this.hasMany(UserActiveQuest);
 	},
 	hasTimestamps: true

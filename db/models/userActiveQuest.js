@@ -9,7 +9,7 @@ var UserActiveQuest = db.Model.extend({
 		return this.belongsTo(User);
 	},
 	quest: function(){
-		return this.hasOne(Quest);
+		return this.belongsTo(Quest);
 	},
 	hasTimestamps: true
 });
