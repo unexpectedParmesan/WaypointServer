@@ -70,7 +70,7 @@ module.exports = {
 
   deleteActiveQuest: function(req, res){
     new userActiveQuest({
-      user_id: req.params.facebookId,
+      facebook_id: req.params.facebookId,
       quest_id: req.params.questId
     }).fetch().then(function(userActiveQuest){
       if (!userActiveQuest){
