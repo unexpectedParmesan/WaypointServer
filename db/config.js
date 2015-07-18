@@ -28,7 +28,7 @@ db.knex.schema.hasTable('quests').then(function(exists) {
 	if (!exists){
 		db.knex.schema.createTable('quests', function(quest){
 			quest.increments('id').primary();
-			quest.integer('creator_id');
+			quest.string('creator_facebook_id');
 			quest.string('title', 100).unique();
 			quest.string('length', 100);
 			quest.string('description', 5000);
@@ -75,8 +75,8 @@ db.knex.schema.hasTable('user_active_quests').then(function(exists){
 	if (!exists){
 		db.knex.schema.createTable('user_active_quests', function(user_active_quest){
 			user_active_quest.integer('quest_id');
-			user_active_quest.integer('user_id');
-			user_active_quest.integer('current_waypoint_id', 10);
+			user_active_quest.integer('facebook_id');
+			user_active_quest.integer('current_waypoint_index', 10);
 			user_active_quest.timestamps();
 		}).then(function(table){
 			console.log('Created table', table);
