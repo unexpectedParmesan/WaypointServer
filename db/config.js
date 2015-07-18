@@ -74,6 +74,7 @@ db.knex.schema.hasTable('users').then(function(exists){
 db.knex.schema.hasTable('user_active_quests').then(function(exists){
 	if (!exists){
 		db.knex.schema.createTable('user_active_quests', function(user_active_quest){
+			user_active_quest.increments('id').primary();
 			user_active_quest.integer('quest_id');
 			user_active_quest.string('facebook_id');
 			user_active_quest.integer('current_waypoint_index', 10);
