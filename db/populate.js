@@ -83,12 +83,34 @@ var user1 = new User({
 
 var activeQuest1 = new userActiveQuest({
 	quest_id: 2,
-	user_id: 2,
-	current_waypoint_id: 1
+	facebook_id: 'facebook1',
+	current_waypoint_index: 1
+});
+
+var quest3 = new Quest({
+	title: 'A unique affair',
+	length: 'A while',
+	description: 'Stuff and things',
+	creator_facebook_id: 'facebook1'
+});
+
+var activeQuest2 = new userActiveQuest({
+	quest_id: 32,
+  facebook_id: 'facebook1',
+  current_waypoint_index: 0
 });
 
 
+
 quest1.save().then(function(quest) {
+	console.log('saved quest:', quest);
+});
+
+quest3.save().then(function(quest){
+	console.log('saved quest:', quest);
+});
+
+activeQuest2.save().then(function(quest){
 	console.log('saved quest:', quest);
 });
 
