@@ -60,6 +60,32 @@ app.delete('/quests/:questId/waypoints/:waypointId', function(req, res) {
   waypointController.deleteWaypoint(req, res);
 });
 
+//////////////
+// USER CRUD
+/////////////
+
+app.get('/users', function(req, res) {
+  userController.getMakeUser(req, res);
+});
+
+app.get('/users/:userId', function(req, res) {
+  userController.getActiveQuests(req, res);
+});
+
+app.put('/users/:userId?:questId', function(req, res) {
+  userController.updateActiveQuest(req, res);
+});
+
+app.delete('/users/:userId?:questId', function(req, res) {
+  userController.deleteActiveQuest(req, res);
+});
+
+app.post('/users, function', function(req, res) {
+  userController.getMakeUser(req, res);
+});
+
+
+
 app.use("/", router);
 
 module.exports = app;
