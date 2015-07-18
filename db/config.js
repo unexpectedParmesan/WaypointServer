@@ -59,11 +59,12 @@ db.knex.schema.hasTable('waypoints').then(function(exists) {
 
 db.knex.schema.hasTable('users').then(function(exists){
 	if (!exists){
-		db.knex.createTable('users', function(user){
+		db.knex.schema.createTable('users', function(user){
 			user.increments('id').primary();
 			user.string('facebook_id', 40);
 			user.string('name', 60);
 			user.string('profile_pic', 100);
+			user.timestamps();
 		}).then(function(user){
 			console.log('Created table', user);
 		});
@@ -72,10 +73,11 @@ db.knex.schema.hasTable('users').then(function(exists){
 
 db.knex.schema.hasTable('user_active_quests').then(function(exists){
 	if (!exists){
-		db.knex.createTable('user_active_quests', function(user_active_quest){
+		db.knex.schema.createTable('user_active_quests', function(user_active_quest){
 			user_active_quest.integer('quest_id');
 			user_active_quest.integer('user_id');
-			user_active_quests('current_waypoint_id', 10);
+			user_active_quest.integer('current_waypoint_id', 10);
+			user_active_quest.timestamps();
 		}).then(function(table){
 			console.log('Created table', table);
 		});

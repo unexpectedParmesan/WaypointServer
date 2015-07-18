@@ -13,6 +13,32 @@ module.exports = {
     });
   },
 
+  getOneQuest: function(req, res) {
+    new Quest().query({ where: {id: req.params.questId}})
+    .fetch({
+      withRelated: 'waypoints'
+    }).then(function(questWithWaypoints){
+      if (!questWithWaypoints){
+        res.status(404).send('Quest not found');
+      } else {
+      res.status(200).send(questWithWaypoints);
+      }
+    });
+  },
+
+  getOneQuestByUser: function(req, res) {
+    new Quest().query({ where: {id: req.params.questId, user_id: req.params.userId}})
+    .fetch({
+      withRelated: 'waypoints'
+    }).then(function(questWithWaypoints){
+      if (!questWithWaypoints){
+        res.status(404).send('Quest not found');
+      } else {
+      res.status(200).send(questWithWaypoints);
+      }
+    });
+  }
+
   makeQuest: function(req, res) {
     new Quest({
       title: req.body.title
