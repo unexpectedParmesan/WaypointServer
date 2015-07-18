@@ -1,9 +1,8 @@
 var express = require("express");
-var router = require("./router.js");
 var bodyParser = require("body-parser");
 var questController = require('./controllers/questController.js');
 var waypointController = require('./controllers/waypointController.js');
-
+var userController = require('./controllers/userController.js');
 
 var db = require("./db/config.js");
 
@@ -65,27 +64,30 @@ app.delete('/quests/:questId/waypoints/:waypointId', function(req, res) {
 /////////////
 
 app.get('/users', function(req, res) {
-  userController.getMakeUser(req, res);
+  userController.getAllUsers(req, res);
 });
 
-app.get('/users/:userId', function(req, res) {
+app.get('/users/:facebookId', function(req, res){
+  userController.getCreateUser(req, res);
+});
+
+app.post('/users/:facebookId', function(req, res) {
+  userController.getCreateUser(req, res);
+});
+
+app.get('/users/:facebookId/quests', function(req, res) {
   userController.getActiveQuests(req, res);
 });
 
-app.put('/users/:userId?:questId', function(req, res) {
+app.put('/users/:facebookId?:questId', function(req, res) {
   userController.updateActiveQuest(req, res);
 });
 
-app.delete('/users/:userId?:questId', function(req, res) {
+app.delete('/users/:facebookId?:questId', function(req, res) {
   userController.deleteActiveQuest(req, res);
 });
 
-app.post('/users, function', function(req, res) {
-  userController.getMakeUser(req, res);
-});
 
-
-
-app.use("/", router);
+// app.use("/", router);
 
 module.exports = app;

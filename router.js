@@ -3,5 +3,3 @@ var questController = require('./Controllers/questController.js');
 var waypointController = require('./Controllers/questController.js');
 var userController = require('./Controllers/questController.js');
 var app = require('./server.js');
-
-};
