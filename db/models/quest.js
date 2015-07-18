@@ -6,8 +6,7 @@ var Quest = db.Model.extend({
 	waypoints: function() {
 		return this.hasMany(Waypoint);
 	},
-	hasTimestamps: true,
-
+	hasTimestamps: true
 });
 
 module.exports = Quest;

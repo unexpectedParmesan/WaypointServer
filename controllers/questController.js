@@ -1,5 +1,4 @@
 var url = require('url');
-
 var Quest = require('../db/models/quest.js');
 var Quests = require('../db/collections/quests.js');
 
@@ -10,6 +9,19 @@ module.exports = {
       withRelated: 'waypoints'
     }).then(function(questWithWaypoints) {
       res.status(200).send(questWithWaypoints);
+    });
+  },
+
+  getOneQuest: function(req, res) {
+    new Quest().query({ where: {id: req.params.questId}})
+    .fetch({
+      withRelated: 'waypoints'
+    }).then(function(questWithWaypoints){
+      if (!questWithWaypoints){
+        res.status(404).send('Quest not found');
+      } else {
+      res.status(200).send(questWithWaypoints);
+      }
     });
   },
 

@@ -4,6 +4,8 @@
 var db = require('./config.js');
 var Quest = require('./models/quest.js');
 var Waypoint = require('./models/waypoint.js');
+var User = require('./models/user.js');
+var userActiveQuest = require('./models/userActiveQuest');
 
 var quest1 = new Quest({
 	title: 'Zombie Escape 2: mySQL',
@@ -73,6 +75,18 @@ var waypoint6 = new Waypoint({
 	description: '...',
 });
 
+var user1 = new User({
+	facebook_id: 'facebook1',
+	name: 'bo diddley',
+	profile_pic: 'fake url'
+});
+
+var activeQuest1 = new userActiveQuest({
+	quest_id: 2,
+	user_id: 2,
+	current_waypoint_id: 1
+});
+
 
 quest1.save().then(function(quest) {
 	console.log('saved quest:', quest);
@@ -104,4 +118,12 @@ waypoint5.save().then(function(waypoint) {
 
 waypoint6.save().then(function(waypoint) {
 	console.log('saved waypoint:', waypoint)
+});
+
+user1.save().then(function(user) {
+	console.log('saved quest:', user);
+});
+
+activeQuest1.save().then(function(activeQuest) {
+	console.log('saved quest:', activeQuest);
 });
