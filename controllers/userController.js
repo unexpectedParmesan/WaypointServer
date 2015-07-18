@@ -70,23 +70,15 @@ module.exports = {
 
   deleteActiveQuest: function(req, res){
     new userActiveQuest({
-      user_id: req.params.userId,
+      facebook_id: req.params.facebookId,
       quest_id: req.params.questId
-    }).fetch().then(function(userActiveQuest){
-      if (!userActiveQuest){
-        res.status(404).send('Quest not found');
-      } else {
-        userActiveQuest.destroy().then(function(success){
-          res.status(200).send();
-        });
-        }
-      });
+    }).fetch().destroy();
   },
 
   findCreateActiveQuest: function(req, res){
     new userActiveQuest({
       facebook_id: req.params.facebookId,
-      quest_id: req.params.userId
+      quest_id: req.params.questId
     }).fetch().then(function(userActiveQuest){
       if (!userActiveQuest){
         res.status(404).send('Active quest not found');
