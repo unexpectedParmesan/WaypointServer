@@ -1,5 +1,4 @@
 var url = require('url');
-
 var Quest = require('../db/models/quest.js');
 var Quests = require('../db/collections/quests.js');
 
@@ -37,7 +36,7 @@ module.exports = {
       res.status(200).send(questWithWaypoints);
       }
     });
-  }
+  },
 
   makeQuest: function(req, res) {
     new Quest({
