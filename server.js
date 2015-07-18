@@ -27,10 +27,6 @@ app.get('/quests/:questId', function(req, res){
 	questController.getOneQuest(req, res);
 });
 
-app.get('/quests/:questId?userId', function(req, res) {
-	questController.getOneQuestByUser(req, res);
-});
-
 app.post('/quests', function(req, res) {
   questController.makeQuest(req, res);
 });
