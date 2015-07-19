@@ -11,7 +11,7 @@ var dbManager = dbTask({
 	// dialect: 'mysql'
 	//Comment out above and use above for local server
 	host: 'us-cdbr-iron-east-02.cleardb.net',
-  username: 'b220d94c2be53d',
+  user: 'b220d94c2be53d',
   password: 'bd11f9e8',
   database: 'heroku_49f978646a3ea6c'
 });
