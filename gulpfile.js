@@ -18,8 +18,8 @@ var dbManager = dbTask({
 
 
 
-gulp.task('drop', dbManager.drop('waypointdb'));
-gulp.task('create', dbManager.create('waypointdb'));
+gulp.task('drop', dbManager.drop('heroku_49f978646a3ea6c'));
+gulp.task('create', dbManager.create('heroku_49f978646a3ea6c'));
 
 gulp.task('reset', ['drop', 'create'], shell.task([
   'echo database test running',
