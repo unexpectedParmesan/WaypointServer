@@ -22,7 +22,7 @@ app.get('/quests', function(req, res) {
   questController.getAllQuests(req, res);
 });
 
-app.get('/quests/:questId', function(req, res){
+app.get('/quests/:questId', function(req, res) {
 	questController.getOneQuest(req, res);
 });
 
@@ -67,19 +67,23 @@ app.get('/users', function(req, res) {
   userController.getAllUsers(req, res);
 });
 
-app.get('/users/:facebookId/createdQuests', function(req, res){
+app.get('/users/:facebookId/createdQuests', function(req, res) {
   userController.getCreatedQuests(req, res);
 });
 
-app.get('/users/:facebookId', function(req, res){
-  userController.getCreateUser(req, res);
+app.get('/users/:facebookId', function(req, res) {
+  userController.getUser(req, res);
+});
+
+app.post('/users/:facebookId', function(req, res) {
+  userController.makeUser(req, res);
 });
 
 app.get('/users/:facebookId/activeQuests', function(req, res) {
   userController.getActiveQuests(req, res);
 });
 
-app.post('/users/:facebookId/activeQuests/:questId', function(req, res){
+app.post('/users/:facebookId/activeQuests/:questId', function(req, res) {
   userController.findCreateActiveQuest(req, res);
 });
 
