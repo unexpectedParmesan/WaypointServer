@@ -12,6 +12,7 @@ var quest1 = new Quest({
 	length: '2.3 mi',
 	description: 'A thrilling brush with the undead through some the city\'s lovliest parks. Includes puzzles and physical clues. Requires tree climbing. Recomended start time is 6pm.',
 	estimated_time: '2-3 hrs',
+	creator_facebook_id: 'facebook1'
 });
 
 var waypoint1 = new Waypoint({
@@ -46,6 +47,7 @@ var quest2 = new Quest({
 	length: '0.7 mi',
 	description: 'we deserve a beer or seven',
 	estimated_time: '1-13 hrs',
+	creator_facebook_id: 'facebook1'
 });
 
 var waypoint4 = new Waypoint({
