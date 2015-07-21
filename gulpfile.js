@@ -8,8 +8,10 @@ var dbManager = dbTask({
 	// host: '127.0.0.1',
 	// user: 'root',
 	// password: '',
+	//database: 'waypointdb',
 	// dialect: 'mysql'
-	//Comment out above and use above for local server
+	
+	//Comment out below and use above for localhost
 	host: 'us-cdbr-iron-east-02.cleardb.net',
   user: 'b220d94c2be53d',
   password: 'bd11f9e8',
@@ -17,7 +19,7 @@ var dbManager = dbTask({
 });
 
 
-
+//Change databases below from 'heroku_...' to 'waypointdb' for localhost
 gulp.task('drop', dbManager.drop('heroku_49f978646a3ea6c'));
 gulp.task('create', dbManager.create('heroku_49f978646a3ea6c'));
 
