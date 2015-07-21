@@ -119,10 +119,8 @@ module.exports = {
     new userActiveQuest({
       facebook_id: req.params.facebookId,
       quest_id: req.params.questId
-    }).fetch().then(function(userActiveQuest){
-      if (!userActiveQuest){
-        res.status(404).send('Active quest not found');
-      } else {
+    }).fetch().then(function(quest){
+      if (!quest){
         var newActiveQuest = new userActiveQuest({
           facebook_id: req.params.facebookId,
           quest_id: req.params.questId,
@@ -131,6 +129,8 @@ module.exports = {
         newActiveQuest.save().then(function(newActiveQuest){
           res.status(201).send(newActiveQuest);
         });
+      } else {
+        res.status(404).send(quest);
       }
     });
   }
