@@ -15,9 +15,6 @@ var UserActiveQuest = db.Model.extend({
 	waypoints: function() {
 		return this.hasMany(Waypoint);
 	},
-	// currentWaypointIndex: function() {
-	// 	return this.belongsTo()
-	// },
 	hasTimestamps: true
 });
 

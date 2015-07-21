@@ -70,7 +70,7 @@ module.exports = {
               // console.log(questWithWaypoints);
               questWithWaypoints = questWithWaypoints.attributes;
               questWithWaypoints.waypoints = waypoints;
-              questWithWaypoints.currentWaypointIndex = currentWaypointIndex;
+              questWithWaypoints.current_waypoint_index = currentWaypointIndex;
               responseArray.push(questWithWaypoints);
             }
           });
