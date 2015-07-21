@@ -8,6 +8,7 @@ var dbManager = dbTask({
 	// host: '127.0.0.1',
 	// user: 'root',
 	// password: '',
+	//database: 'waypointdb',
 	// dialect: 'mysql'
 	//Comment out above and use above for local server
 	host: 'us-cdbr-iron-east-02.cleardb.net',
