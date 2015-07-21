@@ -5,14 +5,14 @@ var userActiveQuest = require('../db/models/userActiveQuest.js');
 
 module.exports = {
 
- getAllUsers: function(req, res){
+ getAllUsers: function(req, res) {
   new User().fetchAll({
-  }).then(function(users){
+  }).then(function(users) {
     res.status(200).send(users);
   });
 },
 
- getUser: function(req, res){
+ getUser: function(req, res) {
   new User({
     facebook_id: req.params.facebookId
     }).fetch().then(function(user) {
@@ -35,11 +35,11 @@ module.exports = {
     });
  },
 
- getCreatedQuests: function(req, res){
+ getCreatedQuests: function(req, res) {
    new Quest().query({where: {creator_facebook_id: req.params.facebookId}})
     .fetch({
       withRelated: 'waypoints'
-    }).then(function(quests){
+    }).then(function(quests) {
     if (!quests){
       res.status(404).send('No created quests found');
     } else {
@@ -49,7 +49,7 @@ module.exports = {
  },
 
   getActiveQuests: function(req, res) {
-    new userActiveQuest().query({where: {facebook_id: req.params.facebookId}})
+    new userActiveQuest().query({ where: { facebook_id: req.params.facebookId } })
       .fetchAll().then(function(userActiveQuests) {
         var responseArray = [];
         userActiveQuests.models.forEach(function(activeQuest) {
@@ -78,25 +78,25 @@ module.exports = {
       });
   },
 
-  updateActiveQuest: function(req, res){
+  updateActiveQuest: function(req, res) {
     new userActiveQuest({
       facebook_id: req.params.facebookId,
       quest_id: req.params.questId
-    }).fetch().then(function(userActiveQuest){
-      if (!userActiveQuest){
+    }).fetch().then(function(userActiveQuest) {
+      if (!userActiveQuest) {
         res.status(404).send('Quest not found');
       } else {
         for (var key in req.body) {
           userActiveQuest.set(key, req.body[key]);
         }
       }
-      userActiveQuest.save().then(function(userActiveQuest){
+      userActiveQuest.save().then(function(userActiveQuest) {
         res.status(200).send(userActiveQuest);
       });
     });
   },
 
-  deleteActiveQuest: function(req, res){
+  deleteActiveQuest: function(req, res) {
     new userActiveQuest({
       facebook_id: req.params.facebookId,
       quest_id: req.params.questId
@@ -115,18 +115,18 @@ module.exports = {
     });
   },
 
-  findCreateActiveQuest: function(req, res){
+  findCreateActiveQuest: function(req, res) {
     new userActiveQuest({
       facebook_id: req.params.facebookId,
       quest_id: req.params.questId
-    }).fetch().then(function(quest){
+    }).fetch().then(function(quest) {
       if (!quest){
         var newActiveQuest = new userActiveQuest({
           facebook_id: req.params.facebookId,
           quest_id: req.params.questId,
           current_waypoint_index: 0
         });
-        newActiveQuest.save().then(function(newActiveQuest){
+        newActiveQuest.save().then(function(newActiveQuest) {
           res.status(201).send(newActiveQuest);
         });
       } else {
@@ -134,5 +134,4 @@ module.exports = {
       }
     });
   }
-
 };
