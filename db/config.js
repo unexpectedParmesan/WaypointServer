@@ -63,7 +63,7 @@ db.knex.schema.hasTable('users').then(function(exists){
 			user.increments('id').primary();
 			user.string('facebook_id', 40);
 			user.string('name', 60);
-			user.string('profile_pic', 100);
+			user.string('profile_pic', 500);
 			user.timestamps();
 		}).then(function(user){
 			console.log('Created table', user);
