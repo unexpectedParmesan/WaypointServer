@@ -51,9 +51,12 @@ module.exports = {
   getActiveQuests: function(req, res){
     new userActiveQuest({
       facebook_id: req.params.facebookId
-      }).fetchAll().then(function(usersActiveQuests) {
+      }).fetchAll().then(function(userActiveQuests) {
         var responseArray = [];
-        usersActiveQuests.models.forEach(function(activeQuest) {
+        // console.log(userActiveQuests);
+        userActiveQuests.models.forEach(function(activeQuest) {
+          console.log(activeQuest);
+          var currentWaypointIndex = activeQuest.attributes.current_waypoint_index;
           new Quest({
             id: activeQuest.attributes.quest_id
           }).fetch({
@@ -64,8 +67,10 @@ module.exports = {
               questWithWaypoints.relations.waypoints.models.forEach(function(waypoint) {
                 waypoints.push(waypoint.attributes);
               });
+              // console.log(questWithWaypoints);
               questWithWaypoints = questWithWaypoints.attributes;
               questWithWaypoints.waypoints = waypoints;
+              questWithWaypoints.current_waypoint_index = currentWaypointIndex;
               responseArray.push(questWithWaypoints);
             }
           });
@@ -73,7 +78,7 @@ module.exports = {
 
         setTimeout(function() {
           res.status(200).send(responseArray);
-        }, 100);
+        }, 300);
       });
   },
 

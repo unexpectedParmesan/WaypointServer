@@ -28,7 +28,7 @@ db.knex.schema.hasTable('quests').then(function(exists) {
 	if (!exists){
 		db.knex.schema.createTable('quests', function(quest){
 			quest.increments('id').primary();
-			quest.string('creator_facebook_id');
+			quest.string('creator_facebook_id', 100);
 			quest.string('title', 100).unique();
 			quest.string('length', 100);
 			quest.string('description', 5000);
